@@ -34,8 +34,9 @@ find_package(CLI11 REQUIRED)
 find_package(zstd REQUIRED)
 find_package(httplib REQUIRED)
 find_package(CURL REQUIRED)
-add_library(libcurl ALIAS CURL::libcurl)
 
+message("curl libs: ${CURL_LIBRARIES}")
+message("curl dirs: ${CURL_INCLUDE_DIRS}")
 
 # ============================================================
 # Application: lemonade-router
@@ -106,6 +107,7 @@ target_link_libraries(${EXECUTABLE_NAME} PRIVATE
     nlohmann_json::nlohmann_json
     CLI11::CLI11
     CURL::libcurl
+    ${CURL_LIBRARIES}
 )
 
 # ============================================================
