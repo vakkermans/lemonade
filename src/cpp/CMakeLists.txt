@@ -362,7 +362,7 @@ target_link_libraries(${EXECUTABLE_NAME} PRIVATE
     httplib::httplib
     nlohmann_json::nlohmann_json
     CLI11::CLI11
-    libcurl
+    CURL
 )
 
 # Platform-specific linking
