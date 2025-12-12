@@ -34,6 +34,7 @@ find_package(CLI11 REQUIRED)
 find_package(zstd REQUIRED)
 find_package(httplib REQUIRED)
 find_package(CURL REQUIRED)
+add_library(libcurl ALIAS CURL::libcurl)
 
 
 # ============================================================
