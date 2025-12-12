@@ -35,6 +35,10 @@ include(FetchContent)
 # ============================================================
 
 find_package(nlohmann_json REQUIRED)
+find_package(CLI11 REQUIRED)
+find_package(curl REQUIRED)
+find_package(zstd REQUIRED)
+find_package(httplib REQUIRED)
 
 # nlohmann/json (MIT License)
 #FetchContent_Declare(json
