@@ -38,12 +38,14 @@ include(FetchContent)
 FetchContent_Declare(json
     GIT_REPOSITORY https://github.com/nlohmann/json.git
     GIT_TAG v3.11.3
+    FIND_PACKAGE_ARGS NAMES nlohmann_json
 )
 
 # CLI11 (BSD 3-Clause License)
 FetchContent_Declare(CLI11
     GIT_REPOSITORY https://github.com/CLIUtils/CLI11.git
     GIT_TAG v2.4.2
+    FIND_PACKAGE_ARGS NAMES cli11
 )
 
 # libcurl (curl license - MIT/X derivate)
@@ -51,6 +53,7 @@ FetchContent_Declare(curl
     GIT_REPOSITORY https://github.com/curl/curl.git
     GIT_TAG curl-8_5_0
     EXCLUDE_FROM_ALL
+    FIND_PACKAGE_ARGS NAMES curl
 )
 
 # zstd (BSD License) - required by httplib for compression
@@ -59,12 +62,14 @@ FetchContent_Declare(zstd
     GIT_TAG v1.5.7
     SOURCE_SUBDIR build/cmake
     EXCLUDE_FROM_ALL
+    FIND_PACKAGE_ARGS NAMES zstd
 )
 
 # cpp-httplib (MIT License)
 FetchContent_Declare(httplib
     GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
     GIT_TAG v0.26.0
+    FIND_PACKAGE_ARGS NAMES httplib
 )
 
 
