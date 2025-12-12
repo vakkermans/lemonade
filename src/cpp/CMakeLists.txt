@@ -116,6 +116,7 @@ else()
 endif()
 # Fetch curl (EXCLUDE_FROM_ALL prevents installation)
 #FetchContent_MakeAvailable(curl)
+add_library(libcurl ALIAS CURL::libcurl)
 
 # === zstd ===
 set(ZSTD_BUILD_STATIC ON CACHE INTERNAL "")
