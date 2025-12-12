@@ -37,42 +37,42 @@ include(FetchContent)
 find_package(nlohmann_json REQUIRED)
 
 # nlohmann/json (MIT License)
-FetchContent_Declare(json
-    GIT_REPOSITORY https://github.com/nlohmann/json.git
-    GIT_TAG v3.11.3
-    FIND_PACKAGE_ARGS NAMES nlohmann_json
-)
+#FetchContent_Declare(json
+#    GIT_REPOSITORY https://github.com/nlohmann/json.git
+#    GIT_TAG v3.11.3
+#    FIND_PACKAGE_ARGS NAMES nlohmann_json
+#)
 
 # CLI11 (BSD 3-Clause License)
-FetchContent_Declare(CLI11
-    GIT_REPOSITORY https://github.com/CLIUtils/CLI11.git
-    GIT_TAG v2.4.2
-    FIND_PACKAGE_ARGS NAMES cli11
-)
+#FetchContent_Declare(CLI11
+#    GIT_REPOSITORY https://github.com/CLIUtils/CLI11.git
+#    GIT_TAG v2.4.2
+#    FIND_PACKAGE_ARGS NAMES cli11
+#)
 
 # libcurl (curl license - MIT/X derivate)
-FetchContent_Declare(curl
-    GIT_REPOSITORY https://github.com/curl/curl.git
-    GIT_TAG curl-8_5_0
-    EXCLUDE_FROM_ALL
-    FIND_PACKAGE_ARGS NAMES curl
-)
+#FetchContent_Declare(curl
+#    GIT_REPOSITORY https://github.com/curl/curl.git
+#    GIT_TAG curl-8_5_0
+#    EXCLUDE_FROM_ALL
+#    FIND_PACKAGE_ARGS NAMES curl
+#)
 
 # zstd (BSD License) - required by httplib for compression
-FetchContent_Declare(zstd
-    GIT_REPOSITORY https://github.com/facebook/zstd.git
-    GIT_TAG v1.5.7
-    SOURCE_SUBDIR build/cmake
-    EXCLUDE_FROM_ALL
-    FIND_PACKAGE_ARGS NAMES zstd
-)
+#FetchContent_Declare(zstd
+#    GIT_REPOSITORY https://github.com/facebook/zstd.git
+#    GIT_TAG v1.5.7
+#    SOURCE_SUBDIR build/cmake
+#    EXCLUDE_FROM_ALL
+#    FIND_PACKAGE_ARGS NAMES zstd
+#)
 
 # cpp-httplib (MIT License)
-FetchContent_Declare(httplib
-    GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
-    GIT_TAG v0.26.0
-    FIND_PACKAGE_ARGS NAMES httplib
-)
+#FetchContent_Declare(httplib
+#    GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
+#    GIT_TAG v0.26.0
+#    FIND_PACKAGE_ARGS NAMES httplib
+#)
 
 
 # ============================================================
@@ -87,12 +87,12 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 # === nlohmann/json ===
 set(JSON_BuildTests OFF CACHE INTERNAL "")
 set(JSON_Install OFF CACHE INTERNAL "")
-FetchContent_MakeAvailable(json)
+#FetchContent_MakeAvailable(json)
 
 # === CLI11 ===
 set(CLI11_BUILD_TESTS OFF CACHE INTERNAL "")
 set(CLI11_BUILD_EXAMPLES OFF CACHE INTERNAL "")
-FetchContent_MakeAvailable(CLI11)
+#FetchContent_MakeAvailable(CLI11)
 
 # === curl ===
 set(BUILD_STATIC_LIBS ON CACHE INTERNAL "")
@@ -111,7 +111,7 @@ else()
     set(CURL_USE_OPENSSL ON CACHE INTERNAL "")
 endif()
 # Fetch curl (EXCLUDE_FROM_ALL prevents installation)
-FetchContent_MakeAvailable(curl)
+#FetchContent_MakeAvailable(curl)
 
 # === zstd ===
 set(ZSTD_BUILD_STATIC ON CACHE INTERNAL "")
@@ -119,7 +119,7 @@ set(ZSTD_BUILD_PROGRAMS OFF CACHE INTERNAL "")
 set(ZSTD_BUILD_SHARED OFF CACHE INTERNAL "")
 set(ZSTD_BUILD_TESTS OFF CACHE INTERNAL "")
 # Fetch zstd (EXCLUDE_FROM_ALL prevents installation)
-FetchContent_MakeAvailable(zstd)
+#FetchContent_MakeAvailable(zstd)
 add_library(zstd::libzstd ALIAS libzstd_static)  # Alias for httplib
 
 # === httplib ===
@@ -135,7 +135,7 @@ set(HTTPLIB_REQUIRE_ZSTD OFF CACHE INTERNAL "")           # Skip zstd checks
 set(HTTPLIB_USE_ZSTD_IF_AVAILABLE OFF CACHE INTERNAL "")  # Skip zstd checks
 set(HTTPLIB_IS_USING_ZSTD ON CACHE INTERNAL "")           # zstd is provided
 set(HTTPLIB_INSTALL OFF CACHE INTERNAL "")                # Prevent installing
-FetchContent_MakeAvailable(httplib)
+#FetchContent_MakeAvailable(httplib)
 # Patch httplib includes due to manual zstd fetching
 target_include_directories(httplib INTERFACE
     ${zstd_SOURCE_DIR}/lib
