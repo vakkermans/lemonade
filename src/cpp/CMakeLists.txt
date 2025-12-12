@@ -33,8 +33,7 @@ find_package(nlohmann_json REQUIRED)
 find_package(CLI11 REQUIRED)
 find_package(zstd REQUIRED)
 find_package(httplib REQUIRED)
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(CURL REQUIRED IMPORTED_TARGET libcurl)
+find_package(CURL REQUIRED)
 
 
 # ============================================================
@@ -105,7 +104,7 @@ target_link_libraries(${EXECUTABLE_NAME} PRIVATE
     httplib::httplib
     nlohmann_json::nlohmann_json
     CLI11::CLI11
-    PkgConfig::CURL
+    CURL::libcurl
 )
 
 # ============================================================
