@@ -141,10 +141,10 @@ set(HTTPLIB_IS_USING_ZSTD ON CACHE INTERNAL "")           # zstd is provided
 set(HTTPLIB_INSTALL OFF CACHE INTERNAL "")                # Prevent installing
 #FetchContent_MakeAvailable(httplib)
 # Patch httplib includes due to manual zstd fetching
-target_include_directories(httplib INTERFACE
-    ${zstd_SOURCE_DIR}/lib
-    ${zstd_SOURCE_DIR}/lib/common
-)
+#target_include_directories(httplib INTERFACE
+#    ${zstd_SOURCE_DIR}/lib
+#    ${zstd_SOURCE_DIR}/lib/common
+#)
 
 
 # ============================================================
