@@ -124,7 +124,7 @@ set(ZSTD_BUILD_SHARED OFF CACHE INTERNAL "")
 set(ZSTD_BUILD_TESTS OFF CACHE INTERNAL "")
 # Fetch zstd (EXCLUDE_FROM_ALL prevents installation)
 #FetchContent_MakeAvailable(zstd)
-add_library(zstd::libzstd ALIAS libzstd_static)  # Alias for httplib
+#add_library(zstd::libzstd ALIAS libzstd_static)  # Alias for httplib
 
 # === httplib ===
 # Disable OpenSSL in httplib (not needed for localhost HTTP server)
